@@ -1,81 +1,121 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Cafe Chaos — Gizlilik Politikası</title>
+  <style>
+    :root {
+      --ink: #f6efe4;
+      --muted: #d9c7b0;
+      --amber: #ffb15a;
+      --line: rgba(255, 214, 170, 0.18);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: #140c08;
+      overflow-x: hidden;
+    }
+    .glow, .glow2 {
+      position: fixed; inset: auto; width: 52vw; height: 52vw; border-radius: 50%;
+      filter: blur(40px); pointer-events: none; z-index: 0;
+    }
+    .glow {
+      top: -18vw; left: -12vw;
+      background: radial-gradient(circle, rgba(255, 150, 60, 0.55), transparent 68%);
+      animation: drift 16s ease-in-out infinite;
+    }
+    .glow2 {
+      right: -16vw; bottom: -20vw;
+      background: radial-gradient(circle, rgba(120, 42, 18, 0.7), transparent 70%);
+      animation: drift 20s ease-in-out infinite reverse;
+    }
+    @keyframes drift {
+      0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+      50% { transform: translate3d(4vw, 3vh, 0) scale(1.08); }
+    }
+    .wrap {
+      position: relative; z-index: 1;
+      width: min(860px, calc(100% - 32px));
+      margin: 48px auto 72px;
+      animation: rise 0.7s ease both;
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: none; }
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(48, 28, 18, 0.78), rgba(22, 12, 8, 0.86));
+      border: 1px solid var(--line);
+      border-radius: 28px;
+      padding: 36px 34px 28px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(16px);
+    }
+    .mark {
+      display: inline-block; letter-spacing: 0.22em; font-size: 12px;
+      color: var(--amber); text-transform: uppercase;
+    }
+    h1 {
+      margin: 10px 0 8px; font-size: clamp(36px, 6vw, 58px); line-height: 0.95;
+      background: linear-gradient(100deg, #fff4e4, #ffb15a 45%, #ff7a3c);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      background-size: 180% 100%;
+      animation: shine 7s linear infinite;
+    }
+    @keyframes shine {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 180% 50%; }
+    }
+    .date { color: var(--muted); margin: 0 0 22px; }
+    nav { display: flex; gap: 10px; margin-bottom: 22px; }
+    nav a {
+      color: var(--ink); text-decoration: none; border: 1px solid var(--line);
+      border-radius: 999px; padding: 8px 14px; transition: 0.2s ease;
+    }
+    nav a.on, nav a:hover { background: rgba(255, 177, 90, 0.16); border-color: rgba(255, 177, 90, 0.45); }
+    h2 { margin: 28px 0 8px; font-size: 20px; }
+    p, li { color: var(--muted); line-height: 1.6; }
+    a { color: var(--amber); }
+    ul { padding-left: 18px; }
+    @media (max-width: 640px) { .card { padding: 26px 18px; } }
+  </style>
 </head>
 <body>
-  <h1>Cafe Chaos Gizlilik Politikası</h1>
-  <p>Son güncelleme: 28 Eylül 2026</p>
-  <p>
-    Bu politika, Android uygulaması <strong>Cafe Chaos</strong>
-    (paket adı: com.cafegame.cafechaos) için geçerlidir.
-    Geliştirici: <strong>[TEVFIKCAN / Company</strong> —
-    iletişim: <a href="mailto:[EMAIL]">[tefikdem1000@gmail.com]</a>
-  </p>
-
-  <h2>Topladığımız bilgiler</h2>
-  <p>
-    Uygulama kendi sunucusunda kullanıcı hesabı oluşturmaz.
-    Giriş ve reklam hizmetleri Google tarafından sağlanır.
-  </p>
-  <ul>
-    <li>
-      <strong>Google Play Oyun Hizmetleri:</strong> Giriş yaparsanız
-      Google hesap kimliğiniz, görünen adınız ve oyuncu kimliğiniz
-      oturum için kullanılır. Cihazda yerel olarak (PlayerPrefs)
-      saklanabilir.
-    </li>
-    <li>
-      <strong>Reklamlar (Google AdMob):</strong> Banner, geçiş ve
-      ödüllü reklam gösterilir. Google; reklam kimliği, IP adresi,
-      cihaz ve kullanım bilgisi işleyebilir. Ayrıntı:
-      <a href="https://policies.google.com/privacy">Google Gizlilik Politikası</a>
-      ve
-      <a href="https://support.google.com/admob/answer/6128543">AdMob</a>.
-    </li>
-    <li>
-      <strong>Çok oyunculu:</strong> Lobi / kafe oturumunda bağlantı
-      için IP adresi host veya eşler arasında kullanılır.
-    </li>
-    <li>
-      <strong>Satın alma:</strong> Uygulama içi satın alma eklendiğinde
-      işlem Google Play tarafından işlenir; kart bilgisi bize gelmez.
-    </li>
-  </ul>
-
-  <h2>Amaç</h2>
-  <p>
-    Giriş, çok oyunculu oyun, reklam gösterimi ve (varsa) mağaza
-    ödemesi. Pazarlama e-postası göndermeyiz.
-  </p>
-
-  <h2>Paylaşım</h2>
-  <p>
-    Veri; Google Play, Play Games ve AdMob dışında üçüncü kişilere
-    satılmaz. Yasal zorunluluk halinde açıklanabilir.
-  </p>
-
-  <h2>Çocuklar</h2>
-  <p>
-    Uygulama 13 yaş altı çocuklara yönelik tasarlanmamıştır ve
-    bilerek çocuk verisi toplamaz.
-  </p>
-
-  <h2>Saklama ve silme</h2>
-  <p>
-    Yerel giriş kaydı uygulamayı silince veya oyundaki çıkış ile
-    cihazdan kalkar. Play Games / reklam verisi için Google hesap
-    ayarlarınızı ve cihazdaki reklam kimliği sıfırlamayı kullanın.
-  </p>
-
-  <h2>Haklarınız</h2>
-  <p>
-    AB/AEA ve benzeri bölgelerde erişim, düzeltme, silme talebi için
-    [EMAIL] adresine yazın. Reklam kişiselleştirme için cihaz
-    ayarlarından reklam kimliğini sıfırlayabilir veya kişiselleştirmeyi
-    kapatabilirsiniz.
-  </p>
+  <div class="glow"></div>
+  <div class="glow2"></div>
+  <main class="wrap">
+    <article class="card">
+      <div class="mark">Cafe Chaos</div>
+      <h1>Gizlilik Politikası</h1>
+      <p class="date">Son güncelleme: 28 Eylül 2026</p>
+      <nav>
+        <a class="on" href="./">Gizlilik</a>
+        <a href="./terms.html">Hizmet Şartları</a>
+      </nav>
+      <p>Bu politika, Android uygulaması Cafe Chaos (paket adı: com.cafegame.cafechaos) için geçerlidir. Geliştirici: TEVFIKCAN. İletişim: <a href="mailto:tefikdem1000@gmail.com">tefikdem1000@gmail.com</a></p>
+      <h2>Topladığımız bilgiler</h2>
+      <p>Uygulama kendi sunucusunda kullanıcı hesabı oluşturmaz. Giriş ve reklam hizmetleri Google tarafından sağlanır.</p>
+      <ul>
+        <li>Google Play Oyun Hizmetleri: Giriş yaparsanız Google hesap kimliğiniz, görünen adınız ve oyuncu kimliğiniz oturum için kullanılır. Cihazda yerel olarak saklanabilir.</li>
+        <li>Reklamlar (Google AdMob): Banner, geçiş ve ödüllü reklam gösterilir. Google; reklam kimliği, IP adresi, cihaz ve kullanım bilgisi işleyebilir.</li>
+        <li>Çok oyunculu: Lobi ve kafe oturumunda bağlantı için IP adresi host veya eşler arasında kullanılır.</li>
+        <li>Satın alma: Uygulama içi satın alma eklendiğinde işlem Google Play tarafından işlenir; kart bilgisi bize gelmez.</li>
+      </ul>
+      <h2>Amaç</h2>
+      <p>Giriş, çok oyunculu oyun, reklam gösterimi ve varsa mağaza ödemesi. Pazarlama e-postası göndermeyiz.</p>
+      <h2>Paylaşım</h2>
+      <p>Veri; Google Play, Play Games ve AdMob dışında üçüncü kişilere satılmaz. Yasal zorunluluk halinde açıklanabilir.</p>
+      <h2>Çocuklar</h2>
+      <p>Uygulama 13 yaş altı çocuklara yönelik tasarlanmamıştır ve bilerek çocuk verisi toplamaz.</p>
+      <h2>Saklama ve silme</h2>
+      <p>Yerel giriş kaydı uygulamayı silince veya oyundaki çıkış ile cihazdan kalkar. Play Games ve reklam verisi için Google hesap ayarlarını ve cihazdaki reklam kimliğini kullanın.</p>
+      <h2>Haklarınız</h2>
+      <p>AB, AEA ve benzeri bölgelerde erişim, düzeltme veya silme talebi için <a href="mailto:tefikdem1000@gmail.com">tefikdem1000@gmail.com</a> adresine yazın. Reklam kişiselleştirme için cihaz ayarlarından reklam kimliğini sıfırlayabilir veya kişiselleştirmeyi kapatabilirsiniz.</p>
+    </article>
+  </main>
 </body>
 </html>
