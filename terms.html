@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cafe Chaos — Hizmet Şartları</title>
+  <style>
+    :root { --ink:#f6efe4; --muted:#d9c7b0; --amber:#ffb15a; --line:rgba(255,214,170,.18); }
+    * { box-sizing: border-box; }
+    body { margin:0; font-family:"Segoe UI",sans-serif; color:var(--ink); background:#140c08; }
+    .glow, .glow2 { position:fixed; width:52vw; height:52vw; border-radius:50%; filter:blur(40px); pointer-events:none; }
+    .glow { top:-18vw; left:-12vw; background:radial-gradient(circle, rgba(255,150,60,.55), transparent 68%); animation:drift 16s ease-in-out infinite; }
+    .glow2 { right:-16vw; bottom:-20vw; background:radial-gradient(circle, rgba(120,42,18,.7), transparent 70%); animation:drift 20s ease-in-out infinite reverse; }
+    @keyframes drift { 50% { transform:translate3d(4vw,3vh,0) scale(1.08); } }
+    .wrap { width:min(860px, calc(100% - 32px)); margin:48px auto 72px; animation:rise .7s ease both; }
+    @keyframes rise { from { opacity:0; transform:translateY(18px);} to { opacity:1; transform:none;} }
+    .card { background:linear-gradient(180deg, rgba(48,28,18,.78), rgba(22,12,8,.86)); border:1px solid var(--line); border-radius:28px; padding:36px 34px 28px; box-shadow:0 30px 80px rgba(0,0,0,.35); backdrop-filter:blur(16px); }
+    .mark { letter-spacing:.22em; font-size:12px; color:var(--amber); text-transform:uppercase; }
+    h1 { margin:10px 0 8px; font-size:clamp(36px,6vw,58px); line-height:.95; background:linear-gradient(100deg,#fff4e4,#ffb15a 45%,#ff7a3c); -webkit-background-clip:text; background-clip:text; color:transparent; background-size:180% 100%; animation:shine 7s linear infinite; }
+    @keyframes shine { to { background-position:180% 50%; } }
+    .date, p, li { color:var(--muted); line-height:1.6; }
+    nav { display:flex; gap:10px; margin:18px 0; }
+    nav a { color:var(--ink); text-decoration:none; border:1px solid var(--line); border-radius:999px; padding:8px 14px; }
+    nav a.on, nav a:hover { background:rgba(255,177,90,.16); }
+    h2 { font-size:20px; }
+    a { color:var(--amber); }
+    @media (max-width:640px){ .card{ padding:26px 18px; } }
+  </style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="glow2"></div>
+  <main class="wrap">
+    <article class="card">
+      <div class="mark">Cafe Chaos</div>
+      <h1>Hizmet Şartları</h1>
+      <p class="date">Son güncelleme: 14 Kasım 2026</p>
+      <nav>
+        <a href="./">Gizlilik</a>
+        <a class="on" href="./terms.html">Hizmet Şartları</a>
+      </nav>
+      <p>Bu şartlar Cafe Chaos mobil oyunu için geçerlidir. Oyunu yükleyerek kabul etmiş olursun.</p>
+      <h2>Hizmet</h2>
+      <p>Cafe Chaos, tek oyunculu ve çevrimiçi çok oyunculu bir kafe oyunudur.</p>
+      <h2>Davranış</h2>
+      <p>Seçtiğin ad diğer oyunculara görünebilir. Hakaret, taciz, hile ve başkasının oyununu bilerek bozmak yasaktır.</p>
+      <h2>Reklamlar</h2>
+      <p>Oyun ücretsizdir ve Google AdMob reklamı gösterebilir.</p>
+      <h2>Sanal öğeler</h2>
+      <p>Kozmetiklerin gerçek para değeri yoktur. Devredilemez ve nakde çevrilemez.</p>
+      <h2>İletişim</h2>
+      <p><a href="mailto:tefikdem1000@gmail.com">tefikdem1000@gmail.com</a></p>
+    </article>
+  </main>
+</body>
+</html>
